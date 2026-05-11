@@ -12,7 +12,7 @@ close_tables() ->
     ets:delete(ioTid),
     dets:close(iotDisk).
 
-add_iot(#iot{id = Id, name = Name} = Iot) ->
+add_iot(#iot{} = Iot) ->
     ets:insert(ioTid, Iot),
     update_iot(Iot).
 
